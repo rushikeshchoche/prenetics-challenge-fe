@@ -1,0 +1,57 @@
+.profile {
+  background-color: #f8f8f8;
+  flex: auto;
+}
+
+.profile__container {
+  padding: 0 10% 1em;
+}
+
+.profile__screenContainer {
+  max-width: 515px;
+  margin: 1em auto;
+  padding: 1em 3em 3em;
+  width: 95%;
+  box-sizing: border-box;
+  line-height: 1.4;
+}
+
+.profile__profileBadge {
+  background-color: #ffab0b;
+  border-radius: 1em;
+  padding: 1em;
+  margin: 1em 0;
+  display: flex;
+  flex-direction: column;
+  color: #fff;
+  transition: background-color 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile__profileBadge > .logo-and-labels {
+  padding-bottom: 1em;
+  border-bottom: 1px solid #fff;
+  margin-bottom: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  flex-direction: row;
+}
+
+.profile__profileBadge > div .PreneticsLogo {
+  -webkit-filter: grayscale(1) brightness(0) invert(100%);
+  filter: grayscale(1) brightness(0) invert(100%);
+}
+
+.profile__profileBadge > div .detail {
+  margin-bottom: 0.75em;
+}
+.profile__profileBadge > div .detail label {
+  font-size: 0.9em;
+}
+
+.profile__profileBadge > div .detail div {
+  font-size: 1.05em;
+  font-weight: 700;
+}

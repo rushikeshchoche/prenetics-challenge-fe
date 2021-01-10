@@ -1,0 +1,57 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 5rem;
+  background-color: #fff;
+  width: 100%;
+  z-index: 10;
+  font-weight: 600;
+}
+
+.header__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 0 auto;
+}
+
+.header__logo {
+  object-fit: contain;
+}
+
+.header__nav {
+  margin-left: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__nav a {
+  text-decoration: none;
+}
+
+.header__links {
+  display: flex;
+}
+
+.header__profileLink {
+  cursor: pointer;
+  margin: 0 1.5em;
+  text-transform: uppercase;
+  color: #002147;
+}
+
+.header__nav a:not(.logo-link) {
+  margin: 0 1.5em;
+  text-transform: uppercase;
+  color: #002147;
+}
+
+.header__userconfigs {
+  display: flex;
+  margin-left: 5%;
+  margin-right: 5%;
+  align-items: center;
+  color: #002147;
+}
