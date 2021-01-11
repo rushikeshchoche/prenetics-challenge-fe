@@ -4,3 +4,9 @@
   justify-content: space-between;
   min-height: 100vh;
 }
+
+.App .standard-link {
+  text-decoration: none;
+  color: #54b047;
+  cursor: pointer;
+}

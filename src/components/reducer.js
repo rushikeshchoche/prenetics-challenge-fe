@@ -15,6 +15,11 @@ const reducer = (state, action) => {
         ...state,
         user: action.user,
       };
+    case "SET_USER_GENETIC":
+      return {
+        ...state,
+        genetic: action.genetic,
+      };
     default:
       return state;
   }

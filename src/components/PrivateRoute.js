@@ -15,7 +15,6 @@ export const PrivateRoute = ({ component: Component, ...rest }) => (
           />
         );
       }
-
       // authorised so return component
       return <Component {...props} />;
     }}

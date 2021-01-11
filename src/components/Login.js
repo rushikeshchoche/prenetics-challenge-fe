@@ -8,27 +8,37 @@ function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [status, setStatus] = useState("");
   const [{}, dispatch] = useStateValue();
 
   const signIn = (e) => {
     e.preventDefault();
-    authenticationService.login(email, password).then(
-      (res) => {
-        console.log("Logged in ->", res);
-        if (res.token) {
-          // Logged In
-          dispatch({
-            type: "SET_TOKEN",
-            token: res.token,
-          });
-          history.push("/");
+    if (email && password) {
+      authenticationService.login(email, password).then(
+        (res) => {
+          if (res.token) {
+            // Logged In
+            dispatch({
+              type: "SET_TOKEN",
+              token: res.token,
+            });
+            if (res.email) {
+              dispatch({
+                type: "SET_USER",
+                user: { email: res.email },
+              });
+            }
+
+            history.push("/");
+          }
+        },
+        (error) => {
+          setStatus(error);
         }
-      },
-      (error) => {
-        /* setSubmitting(false);
-        setStatus(error); */
-      }
-    );
+      );
+    } else {
+      setStatus("Email and Password are mandatory");
+    }
   };
 
   return (
@@ -62,6 +72,7 @@ function Login() {
           >
             Log In
           </button>
+          {status && <div className="login__alertDanger">{status}</div>}
         </form>
       </div>
     </div>

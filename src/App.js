@@ -20,6 +20,12 @@ function App() {
         type: "SET_TOKEN",
         token: currentUser.token,
       });
+      if (currentUser.email) {
+        dispatch({
+          type: "SET_USER",
+          user: { email: currentUser.email },
+        });
+      }
     }
   }, []);
 

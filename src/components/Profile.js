@@ -5,18 +5,34 @@ import "./Profile.css";
 import logo from "../assets/prenetics-logo.svg";
 
 function Profile() {
-  const [{ token, user }, dispatch] = useStateValue();
+  const [{ user, genetic }, dispatch] = useStateValue();
 
   useEffect(() => {
-    userService.getUserData().then((res) => {
-      if (res) {
-        dispatch({
-          type: "SET_USER",
-          user: res,
-        });
-      }
-    });
+    if (user) {
+      userService.getUserData(user).then((res) => {
+        if (res) {
+          dispatch({
+            type: "SET_USER",
+            user: res,
+          });
+        }
+      });
+    }
   }, []);
+
+  const getGeneticInfo = () => {
+    if (user) {
+      userService.getGeneticResults(user).then((res) => {
+        if (res) {
+          const parsedResult = JSON.parse(res.result);
+          dispatch({
+            type: "SET_USER_GENETIC",
+            genetic: { policyCode: res.policyCode, result: parsedResult },
+          });
+        }
+      });
+    }
+  };
 
   return (
     <div className="profile">
@@ -26,9 +42,6 @@ function Profile() {
             <div className="logo-and-labels">
               <div>
                 <img className="PreneticsLogo" src={logo} alt="" />
-              </div>
-              <div>
-                <div></div>
               </div>
             </div>
             <div>
@@ -51,6 +64,18 @@ function Profile() {
                 </div>
               </div>
             </div>
+          </div>
+          <div>
+            <button className="Button Button-green" onClick={getGeneticInfo}>
+              View Genetics Report
+            </button>
+            {genetic && (
+              <div className="profile__geneticContainer">
+                <div className="profile__geneticHeader">Genetic results</div>
+                <div>Policy Code : {genetic.policyCode}</div>
+                <div>Result: {genetic.result.type}</div>
+              </div>
+            )}
           </div>
         </div>
       </div>

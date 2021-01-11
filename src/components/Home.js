@@ -21,13 +21,13 @@ function Home() {
           </div>
           <h2>What do you need?</h2>
           <div>
-            <p className="paragraph center">
+            <p className="home__paragraphCenter">
               To help you with your order, please tell us more about your travel
               plans.
             </p>
           </div>
-          <div className="GlobalRapidWelcome">
-            <div className="ContainerWithShadow  undefined padding-normal">
+          <div className="home__globalRapidWelcome">
+            <div className="ContainerWithShadow   padding-normal">
               <div className="welcome-page-title">
                 <span>Pre-Departure COVID-19 Test </span>
                 <span>I need a test before I fly out from Hong Kong</span>
@@ -40,7 +40,7 @@ function Home() {
                   option(s) below:
                 </p>
               </div>
-              <div className="ContainerWithShadow  undefined padding-normal">
+              <div className="ContainerWithShadow  padding-normal">
                 <div className="welcome-page-title">
                   <span>Pre-Departure COVID-19 Test</span>
                   <span>At Airport Rapid PCR Test</span>
@@ -80,19 +80,9 @@ function Home() {
                 <ul>
                   <li>Suitable for age 6 and above</li>
                 </ul>
-                <button
-                  id="view-sample-report"
-                  className="Button link-green"
-                  type="button"
-                >
-                  View Sample Report
-                </button>
-                <button id="go-to-cart" className="Button green" type="button">
-                  Select
-                </button>
               </div>
             </div>
-            <div className="ContainerWithShadow  undefined padding-normal">
+            <div className="ContainerWithShadow   padding-normal">
               <div className="welcome-page-title">
                 <span>On-Arrival COVID-19 Test </span>
                 <span>I need a test when I land in Hong Kong</span>
@@ -107,7 +97,7 @@ function Home() {
                   option(s) below:
                 </p>
               </div>
-              <div className="ContainerWithShadow  undefined padding-normal">
+              <div className="ContainerWithShadow   padding-normal">
                 <div className="welcome-page-title">
                   <span>On-Arrival COVID-19 Test </span>
                   <span>Arrival COVID-19 Test</span>
